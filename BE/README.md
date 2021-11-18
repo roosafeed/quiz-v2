@@ -51,5 +51,5 @@
 
    5. GET `/api/user/quiz/result/all`
 
-   6. GET `/api/user/quiz/result/{id}`
+   6. GET `/api/user/quiz/{id}/result`
 

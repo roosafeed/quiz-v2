@@ -208,7 +208,7 @@ public class UserContent {
 		return ResponseEntity.status(HttpStatus.OK).body(res);
 	}
 	
-	@GetMapping("/quiz/result/{id}")
+	@GetMapping("/quiz/{id}/result")
 	public ResponseEntity<UserQuizResultResponse> getOneQuizResult(@PathVariable long id) {
 		Object udo = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		UserDetailsImpl udi = (UserDetailsImpl) udo;
