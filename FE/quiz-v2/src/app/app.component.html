@@ -1,0 +1,11 @@
+<div id="navbar">
+    <ul>
+        <li><a routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" routerLink="">Home</a></li>
+        <li *ngIf="!loggedin"><a routerLinkActive="active" routerLink="login">Login</a></li>
+        <li *ngIf="!loggedin"><a routerLinkActive="active" routerLink="register">Register</a></li>
+        <li *ngIf="loggedin" style="float:right"><a routerLinkActive="active" (click)="logout()">Logout</a></li>
+        <li *ngIf="loggedin" style="float:right"><a>Hello, {{uname}}</a></li>
+    </ul>
+</div>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,20 @@
+div#reg-cont {
+    width: 80%;
+    padding: 10px 85px;
+}
+
+.row {
+    margin-left: 0!important;
+}
+
+.loading {
+    pointer-events: none;
+    background-color: darkgray;
+}
+
+@media (max-width: 768px) {
+    div#reg-cont {
+        width: 95%;
+        padding: 10px 10px;
+    }
+}
