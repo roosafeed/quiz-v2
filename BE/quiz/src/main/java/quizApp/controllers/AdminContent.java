@@ -1,6 +1,7 @@
 package quizApp.controllers;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.management.RuntimeErrorException;
@@ -35,43 +36,50 @@ import quizApp.repo.UserRepository;
 @RequestMapping("/api/admin")
 @PreAuthorize("hasRole('ADMIN')")
 public class AdminContent {
-	@GetMapping("/test")	
+	@GetMapping("/test")
 	public String adminAccess() {
 		return "Admin Works.";
 	}
-	
+
 	@Autowired
 	UserRepository urepo;
-	
+
 	@Autowired
 	QuestionsRepo qrepo;
-	
+
 	@Autowired
 	ChoicesRepo crepo;
-	
+
 	@PostMapping("/question/add")
 	public ResponseEntity<MessageResponse> addQuestion(@Valid @RequestBody QuestionAddRequest que) {
 		String msg = "Question added";
-		
+
 		Questions q = new Questions();
 		Set<Choices> cs = new HashSet<Choices>();
-		
+
 		q.setQuestion(que.getQuestion());
-		
-		for(ChoiceAddRequest cr: que.getChoices()) {
+
+		for (ChoiceAddRequest cr : que.getChoices()) {
 			Choices c = new Choices();
 			c.setIsAnswer(cr.getIsAnswer());
 			c.setName(cr.getName());
-			
+
 			Choices csaved = crepo.save(c);
-			
+
 			cs.add(csaved);
 		}
-		
+
 		q.setChoices(cs);
-		
+
 		qrepo.save(q);
-		
+
 		return ResponseEntity.status(HttpStatus.OK).body(new MessageResponse(msg));
+	}
+
+	@GetMapping("/question/all")
+	public ResponseEntity<List<Questions>> viewAll() {
+		List<Questions> qs = qrepo.findAll();
+
+		return ResponseEntity.status(HttpStatus.OK).body(qs);
 	}
 }
