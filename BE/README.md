@@ -5,27 +5,28 @@
 
   ### Admins
    1. POST `/api/admin/question/add`
-    `{
-        "question":"Fathometer is used to measure",
-        "choices": [
-            {
-                "name": "Earthquakes",
-                "isAnswer": "n"
-            },
-            {
-                "name": "Rainfall",
-                "isAnswer": "n"
-            },
-            {
-                "name": "Ocean depth",
-                "isAnswer": "y"
-            },
-            {
-                "name": "Sound intensity",
-                "isAnswer": "n"
-            }
-        ]
-    }`
+   
+        `{
+            "question":"Fathometer is used to measure",
+            "choices": [
+                {
+                    "name": "Earthquakes",
+                    "isAnswer": "n"
+                },
+                {
+                    "name": "Rainfall",
+                    "isAnswer": "n"
+                },
+                {
+                    "name": "Ocean depth",
+                    "isAnswer": "y"
+                },
+                {
+                    "name": "Sound intensity",
+                    "isAnswer": "n"
+                }
+            ]
+        }`
 
     2. GET `/api/admin/question/all`
 
