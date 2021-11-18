@@ -5,7 +5,7 @@
 
   ### Admins
    1. POST `/api/admin/question/add`
-   
+
         `{
             "question":"Fathometer is used to measure",
             "choices": [
@@ -28,25 +28,28 @@
             ]
         }`
 
-    2. GET `/api/admin/question/all`
+   2. GET `/api/admin/question/all`
 
-## Install
 
-To get started,
+  ### Logged in Users
+   1. GET `/api/user/quiz/{qzid}/question/get/{id}`        
 
-    1. Download or clone the repository.
+   2. GET `/api/user/quiz/{id}/question/get/all`
 
-    2. Run `npm install` 
+   3. POST `/api/user/quiz/new`
 
-## Development server
+        `{
+            "startDate":"Thu Nov 18 2021 13:54:45 GMT+0530 (India Standard Time)"
+        }`
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+   4. POST `/api/user/quiz/{id}/answer/add`
 
-## Code scaffolding
+        `{
+            "qid": 7,
+            "cid": 5
+        }`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+   5. GET `/api/user/quiz/result/all`
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+   6. GET `/api/user/quiz/result/{id}`
 
