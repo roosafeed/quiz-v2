@@ -36,9 +36,7 @@ export class LoginComponent implements OnInit {
         //save token and user
         this.token.saveToken(data.accessToken);
         this.token.saveUser(data);
-        //
-        // console.log(data);
-        this.route.navigate(['']);
+        this.route.navigate(['home']);
       },
       err => {
         this.message = (err.error.message == "Error: Unauthorized") ? "Incorrect Username/Password" : err.error.message;

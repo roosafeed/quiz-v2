@@ -1,1 +1,11 @@
-<p>home works!</p>
+<div id="box-cont">
+    <div class="box">
+        <h1>+</h1>
+        <a>New Quiz</a>
+    </div>
+    <div class="box" *ngFor="let q of quizes; index as i">
+        <h3>#{{ i + 1 }}</h3>
+        <p>attempted on {{ q.startDate }}</p>
+        <a routerLink="/result/{{q.id}}">View Result</a>
+    </div>
+</div>
