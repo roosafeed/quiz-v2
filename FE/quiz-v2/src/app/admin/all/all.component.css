@@ -1,0 +1,17 @@
+div#all-cont {
+    width: 80%;
+    margin: 10px 10%;
+}
+
+ul {
+    list-style-type: none;
+    width: 80%;
+}
+
+div.question {
+    border-bottom: dotted 1px rgb(41, 41, 41);
+}
+
+ul li.green {
+    background-color: rgba(4, 170, 109, 0.5);
+}

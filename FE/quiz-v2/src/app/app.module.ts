@@ -14,6 +14,7 @@ import { RegisterComponent } from './register/register.component';
 import { ResultComponent } from './result/result.component';
 import { AddComponent } from './admin/add/add.component';
 import { QuizComponent } from './quiz/quiz.component';
+import { AllComponent } from './admin/all/all.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { QuizComponent } from './quiz/quiz.component';
     RegisterComponent,
     ResultComponent,
     AddComponent,
-    QuizComponent
+    QuizComponent,
+    AllComponent
   ],
   imports: [
     BrowserModule,

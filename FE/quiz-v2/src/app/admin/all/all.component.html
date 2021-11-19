@@ -1,0 +1,17 @@
+<div id="all-cont">
+    <h2>All Questions</h2>
+
+    <div id="questions">
+        <div class="question" *ngFor="let q of ques; index as i">
+            <h3>{{ i+1 }}. {{ q.question }}</h3>
+            <ul>
+                <li *ngFor="let a of q.choices" [ngClass]="a.isAnswer == 'y' ? 'green' : ''">            
+                    {{ a.name }}
+                </li>
+            </ul> 
+        </div>
+    </div>
+
+    <br><br>
+    <input type="button" routerLink="/admin/add" value="Add a Question">
+</div>

@@ -18,4 +18,8 @@ export class AdminService {
   addQuestion(jsonString: string): Observable<any> {
     return this.http.post(BASE + "/question/add", JSON.parse(jsonString), httpOpts);
   }
+
+  getAllQuestions(): Observable<any> {
+    return this.http.get(BASE + "/question/all", { responseType: 'json' });
+  }
 }
