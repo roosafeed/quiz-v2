@@ -13,6 +13,7 @@ import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { ResultComponent } from './result/result.component';
 import { AddComponent } from './admin/add/add.component';
+import { QuizComponent } from './quiz/quiz.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { AddComponent } from './admin/add/add.component';
     HomeComponent,
     RegisterComponent,
     ResultComponent,
-    AddComponent
+    AddComponent,
+    QuizComponent
   ],
   imports: [
     BrowserModule,

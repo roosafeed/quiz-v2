@@ -1,4 +1,5 @@
-<div id="res-cont">
+<p *ngIf="loading">Result loading...</p>
+<div *ngIf="!loading" id="res-cont">
     <h1>Final Score: {{ score }}/{{ total }}</h1>
     <h3>Attempted on {{ result.startDate }}</h3>
     <hr />
@@ -6,9 +7,9 @@
     <div class="result" *ngFor="let q of result.results; index as i">
         <h3>{{ i+1 }}. {{ q.question }}</h3>
         <ul>
-            <li *ngFor="let a of q.choices" [ngClass]="a.isAnswer == 'y' ? 'correct' : ''">            
+            <li *ngFor="let a of q.choices" [ngClass]="getClass(a.id == q.chosen, a.isAnswer == 'y')">            
                 {{ a.name }}
-                <span *ngIf="a.id == q.chosen" title="Your choice">*</span>
+                <span *ngIf="a.isAnswer == 'y'" title="Correct answer">*</span>
             </li>
         </ul>    
         <p>Your choice was <span *ngIf="!q.correct"> in</span>correct</p>

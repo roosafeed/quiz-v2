@@ -12,6 +12,10 @@ div.result {
     border-bottom: dotted 1px rgb(41, 41, 41);
 }
 
-ul li.correct {
+ul li.green {
     background-color: rgba(4, 170, 109, 0.5);
+}
+
+ul li.red {
+    background-color: rgba(226, 32, 32, 0.5);
 }

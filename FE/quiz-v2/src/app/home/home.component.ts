@@ -36,4 +36,15 @@ export class HomeComponent implements OnInit {
     
   }
 
+  newQuiz() {
+    this.userSer.startNewQuiz().subscribe(
+      data => {
+        this.router.navigate(['/quiz', data]);
+      },
+      err => {
+        console.log("Error: " + err.statusText);
+      }
+    )
+  }
+
 }

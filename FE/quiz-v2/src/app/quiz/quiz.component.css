@@ -1,0 +1,9 @@
+div#quiz-cont {
+    width: 80%;
+    margin: 10px 10%;
+}
+
+#startBtn {
+    background-color: rgb(4, 170, 109);
+    color: #fff;
+}

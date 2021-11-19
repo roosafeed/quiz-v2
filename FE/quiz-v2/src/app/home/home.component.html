@@ -1,7 +1,7 @@
 <div id="box-cont">
     <div class="box">
         <h1>+</h1>
-        <a>New Quiz</a>
+        <a (click)="newQuiz()">New Quiz</a>
     </div>
     <div class="box" *ngFor="let q of quizes; index as i">
         <h3>#{{ i + 1 }}</h3>

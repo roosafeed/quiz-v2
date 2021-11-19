@@ -14,6 +14,7 @@ export class ResultComponent implements OnInit {
   score: number = 0;
   total: number = 0;
   startDate!: string;
+  loading: boolean = true;
 
   constructor(private route: ActivatedRoute,
     private token: TokenService,
@@ -34,8 +35,24 @@ export class ResultComponent implements OnInit {
               this.score += 1;
             }
           });
+          this.loading = false;
         }
       );
+    }
+  }
+
+  getClass(chosen: boolean, correct: boolean): string {
+    if(chosen) {
+      if(correct) {
+        return "green";
+      }
+      else {
+        return "red";
+      }
+    }
+
+    else {
+      return "";
     }
   }
 

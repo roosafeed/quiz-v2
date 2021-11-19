@@ -1,0 +1,22 @@
+<div id="quiz-cont">
+    <h2>Quiz</h2>
+    <h4 *ngIf="qids.currIndex > -1">Question {{ qids.currIndex+1 }}/{{ total }}</h4>
+
+    <input id="startBtn" (click)="startQuiz()" type="button" value="Start Quiz" *ngIf="qids.currIndex == -1" />
+
+    <div *ngIf="qids.currIndex > -1" id="quiz">
+        <h3>{{ quiz.question }}</h3>
+        <ul>
+            <li *ngFor="let c of quiz.choices">
+                <input type="radio" name="choice" value="{{c.id}}" [(ngModel)]="cid">
+                {{ c.name }}
+            </li>
+        </ul>
+    </div>
+
+    <br>
+    <input [disabled]="loading ? 'disabled' : ''" [ngClass]="loading ? 'loading' : ''" (click)="prev()"
+        *ngIf="qids.currIndex > -1" type="button" value="< Previous">
+    <input [disabled]="loading ? 'disabled' : ''" [ngClass]="loading ? 'loading' : ''" (click)="next()"
+        *ngIf="qids.currIndex > -1" type="button" [value]="nextBtn">
+</div>
