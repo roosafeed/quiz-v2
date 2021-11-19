@@ -20,7 +20,6 @@ export class AppComponent {
         this.loggedin = this.token.isLoggedIn();
         this.uname = (this.token.isLoggedIn()) ? this.token.getUser().name : "";
         this.isadmin = this.token.isAdmin();
-        console.log("nav end");
       }
     });
 
