@@ -22,16 +22,16 @@ export class ResultComponent implements OnInit {
 
   ngOnInit(): void {
     const qid = Number(this.route.snapshot.paramMap.get('id'));
-    if(this.token.isLoggedIn()) {
+    if (this.token.isLoggedIn()) {
       this.userSer.getQuizResultById(qid).subscribe(
         data => {
           this.result = data;
           const d = new Date(this.result.startDate);
-          this.result.startDate = "" + d.getDate() + "/" + d.getMonth() + "/" + d.getFullYear();
-          console.log(this.result);
+          this.result.startDate = "" + d.getDate() + "/" + d.getMonth() + "/" + d.getFullYear() + " - " + d.getHours() + ":" + d.getMinutes();
+          
           this.total = this.result.results.length;
-          this.result.results.forEach((q:any) => {
-            if(q.correct) {
+          this.result.results.forEach((q: any) => {
+            if (q.correct) {
               this.score += 1;
             }
           });
@@ -42,8 +42,8 @@ export class ResultComponent implements OnInit {
   }
 
   getClass(chosen: boolean, correct: boolean): string {
-    if(chosen) {
-      if(correct) {
+    if (chosen) {
+      if (correct) {
         return "green";
       }
       else {

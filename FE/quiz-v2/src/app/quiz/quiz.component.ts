@@ -32,7 +32,6 @@ export class QuizComponent implements OnInit {
       data => {
         this.total = data.length;
         this.qids.qid = data;
-        console.log(this.qids);
       },
       err => {
         console.log("Error: " + err.statusText);

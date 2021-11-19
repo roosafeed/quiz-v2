@@ -21,11 +21,7 @@ export class AppComponent {
         this.uname = (this.token.isLoggedIn()) ? this.token.getUser().name : "";
         this.isadmin = this.token.isAdmin();
       }
-    });
-
-    // if(!this.token.isLoggedIn()){
-    //   this.router.navigate(['login']);
-    // }    
+    });  
   }
 
   logout() {

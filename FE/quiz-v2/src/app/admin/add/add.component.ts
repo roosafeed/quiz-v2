@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { AdminService } from '../../services/admin.service';
 
@@ -7,16 +7,13 @@ import { AdminService } from '../../services/admin.service';
   templateUrl: './add.component.html',
   styleUrls: ['./add.component.css']
 })
-export class AddComponent implements OnInit {
+export class AddComponent {
   message: string = "";  
   que: string = "";
   ans: Choice[] = [];
 
   constructor(private adminSer: AdminService) {
    }
-
-  ngOnInit(): void {
-  }
 
   addQuestion() {   
     var flag: number = 0;
