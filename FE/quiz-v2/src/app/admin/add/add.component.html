@@ -1,0 +1,33 @@
+<div id="add-cont">
+    <h3>Register User</h3>
+    <span class="text-info text-danger">{{message}}</span> <br>
+
+    <form (ngSubmit)="addQuestion()">
+        <!-- row#1 -->
+        <div class="form-group row">
+            <div class="col-2">
+                <label>Question</label>
+            </div>
+            <div class="col-4">
+                <input type="text" [(ngModel)]="que" name="question" class="form-control" />
+            </div>
+        </div>
+        <!-- row#2 -->
+        <div class="form-group row" *ngFor="let c of ans; index as i">
+            <div class="col-2">
+                <label>Choice - {{ i+1 }}</label>
+            </div>
+            <div class="col-4">
+                <input type="radio" name="isAnswer" value="y" title="Is answer" (change)="radioSelect(i)" />
+                <input type="text" name="choice-{{i}}" [(ngModel)]="c.name" class="form-control" />
+                <input type="button" (click)="delChoice(i)" value="Del" />
+            </div>
+        </div>
+
+        <input type="button" (click)="addChoice()" value="Add Choice" />
+        <br /> 
+
+        <input type="submit" class="form-control" value="Submit " class="btn btn-success" />
+    </form>
+
+</div>

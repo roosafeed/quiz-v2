@@ -1,0 +1,30 @@
+div#add-cont {
+    width: 80%;
+    padding: 10px 85px;
+}
+
+input[type="text"] {
+    width: 70%;
+    font-size: 1.1em;
+}
+
+input[type="button"], input[type="submit"] {
+    margin: 6px 2px;
+}
+
+.row {
+    margin-left: 0!important;
+    margin-top: 8px;
+}
+
+.loading {
+    pointer-events: none;
+    background-color: darkgray;
+}
+
+@media (max-width: 768px) {
+    div#reg-cont {
+        width: 95%;
+        padding: 10px 10px;
+    }
+}

@@ -11,6 +11,7 @@ import { TokenService } from '../app/services/token.service';
 export class AppComponent {
   title = 'quiz-v2';
   loggedin!: boolean;
+  isadmin: boolean = false;
   uname!: string;
 
   constructor(private token: TokenService, private router: Router){
@@ -18,6 +19,7 @@ export class AppComponent {
       if (e instanceof NavigationEnd) {
         this.loggedin = this.token.isLoggedIn();
         this.uname = (this.token.isLoggedIn()) ? this.token.getUser().name : "";
+        this.isadmin = this.token.isAdmin();
         console.log("nav end");
       }
     });
